@@ -1,0 +1,18 @@
+{
+    "name": "ingria/laravel-x509-auth",
+    "description": "Laravel 5 Client Certificate auth middleware",
+    "keywords": ["laravel", "auth", "x509", "certificate"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Codefuhrer",
+        "email": "codefuhrer@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ingria\\LaravelX509Auth\\": "src/"
+        }
+    }
+}
