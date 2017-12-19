@@ -50,7 +50,7 @@ class AuthenticateWithClientCertificate
 
         /** If the certificate is valid, log in and remember the user: */
         if ($request->server('SSL_CLIENT_VERIFY') === 'SUCCESS') {
-            $this->auth->guard($guard)->login(self::getUserFromCert($request), true);
+            $this->auth->guard($guard)->login(static::getUserFromCert($request), true);
 
             return $next($request);
         }
@@ -65,7 +65,7 @@ class AuthenticateWithClientCertificate
      * @param  Request $request
      * @return App\User
      */
-    private static function getUserFromCert(Request $request)
+    protected static function getUserFromCert(Request $request)
     {
         /**
          * Probably misconfigured Nginx:
@@ -90,7 +90,7 @@ class AuthenticateWithClientCertificate
      * @param  string $subject
      * @return string
      */
-    private static function getEmailFromDn(string $subject): string
+    protected static function getEmailFromDn(string $subject): string
     {
         preg_match('/emailAddress=([\w\+]+@[a-z\-\d]+\.[a-z\-\.\d]{2,})/i', $subject, $match);
 

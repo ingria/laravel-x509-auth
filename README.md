@@ -8,6 +8,8 @@ Also known as X.509 client authentication.
 3. This package allows `Admin` to use your app without ever logging in.
 4. All users including `Admin` can still use plain password auth.
 
+> __Pro tip__: you can also [use any other certificate attributes](https://github.com/ingria/laravel-x509-auth/wiki/Using-other-cert-attributes) for authentication, not only `emailAddress` (like `id` or `username`). I don't think you need this package in that case, but anyway 🤷.
+
 ## Prerequisites
 
 Please don't blindly copy-paste the commands. It's important for you to know what you're doing.
